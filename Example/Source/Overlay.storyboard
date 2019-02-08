@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eup-gv-dVE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Overlay View Controller-->
+        <scene sceneID="8YT-1E-P8r">
+            <objects>
+                <viewController id="eup-gv-dVE" customClass="OverlayViewController" customModule="iOS_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Oda-rT-IH5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fV3-o6-zQI">
+                                <rect key="frame" x="8" y="303.5" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Vmd-cl-6k0"/>
+                                    <constraint firstAttribute="height" constant="60" id="vn5-Fz-uEc"/>
+                                </constraints>
+                                <state key="normal" image="RecordDisabled">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="recorderTapped:" destination="eup-gv-dVE" eventType="touchUpInside" id="cAh-dO-dLm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wYZ-TP-Q4O">
+                                <rect key="frame" x="307" y="303.5" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.50486943489726022" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="NPb-FK-0Rt"/>
+                                    <constraint firstAttribute="width" constant="60" id="b7a-aj-Nf5"/>
+                                </constraints>
+                                <state key="normal" image="PlayerPlay">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="playerTapped:" destination="eup-gv-dVE" eventType="touchUpInside" id="9GX-uJ-zey"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fV3-o6-zQI" firstAttribute="centerY" secondItem="Oda-rT-IH5" secondAttribute="centerY" id="OY2-jq-qnE"/>
+                            <constraint firstItem="wYZ-TP-Q4O" firstAttribute="centerY" secondItem="Oda-rT-IH5" secondAttribute="centerY" id="Zzz-O6-deA"/>
+                            <constraint firstItem="fV3-o6-zQI" firstAttribute="leading" secondItem="Oda-rT-IH5" secondAttribute="leading" constant="8" id="rkh-7Z-t2r"/>
+                            <constraint firstAttribute="trailing" secondItem="wYZ-TP-Q4O" secondAttribute="trailing" constant="8" id="x0h-H2-3Hs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Oex-Kf-3He"/>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="playerButton" destination="wYZ-TP-Q4O" id="9Ci-Qk-CS5"/>
+                        <outlet property="recorderButton" destination="fV3-o6-zQI" id="40Z-jB-3oz"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jCv-LY-Q7Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-22" y="179"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="PlayerPlay" width="60" height="60"/>
+        <image name="RecordDisabled" width="60" height="60"/>
+    </resources>
+</document>
