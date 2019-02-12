@@ -4,7 +4,6 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -148,6 +147,58 @@
                                                 <constraint firstAttribute="trailing" secondItem="Mje-1H-yJY" secondAttribute="trailing" id="XB3-qG-kDv"/>
                                                 <constraint firstItem="Mje-1H-yJY" firstAttribute="top" secondItem="unR-ua-dLF" secondAttribute="top" id="fqW-Cq-VQ7"/>
                                                 <constraint firstItem="Mje-1H-yJY" firstAttribute="leading" secondItem="unR-ua-dLF" secondAttribute="leading" id="rHX-X0-4FD"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="B5M-vr-qdn">
+                                        <rect key="frame" x="0.0" y="335" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="B5M-vr-qdn" id="SaV-Zb-Su1">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="leS-WK-aU7">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="9vA-Ye-FRH"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Show Safari"/>
+                                                    <connections>
+                                                        <action selector="showSafariTapped:" destination="taA-An-7va" eventType="touchUpInside" id="Xbz-3S-5vs"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="leS-WK-aU7" firstAttribute="leading" secondItem="SaV-Zb-Su1" secondAttribute="leading" id="5FT-Od-HDv"/>
+                                                <constraint firstAttribute="trailing" secondItem="leS-WK-aU7" secondAttribute="trailing" id="YL2-1M-OP5"/>
+                                                <constraint firstItem="leS-WK-aU7" firstAttribute="top" secondItem="SaV-Zb-Su1" secondAttribute="top" id="hzo-91-Ixq"/>
+                                                <constraint firstAttribute="bottom" secondItem="leS-WK-aU7" secondAttribute="bottom" id="kSx-vB-dEz"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jwR-Be-aWp">
+                                        <rect key="frame" x="0.0" y="379" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jwR-Be-aWp" id="7Uw-Ry-ZPT">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wsu-3m-5ug">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="44" id="MS9-LI-Chd"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Show Permission"/>
+                                                    <connections>
+                                                        <action selector="showPermissionTapped:" destination="taA-An-7va" eventType="touchUpInside" id="Rfe-CK-VVp"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wsu-3m-5ug" firstAttribute="top" secondItem="7Uw-Ry-ZPT" secondAttribute="top" id="1hz-kg-IFy"/>
+                                                <constraint firstAttribute="trailing" secondItem="wsu-3m-5ug" secondAttribute="trailing" id="Wb3-Su-ypj"/>
+                                                <constraint firstAttribute="bottom" secondItem="wsu-3m-5ug" secondAttribute="bottom" id="Xbd-kR-339"/>
+                                                <constraint firstItem="wsu-3m-5ug" firstAttribute="leading" secondItem="7Uw-Ry-ZPT" secondAttribute="leading" id="Z7y-he-qpq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
