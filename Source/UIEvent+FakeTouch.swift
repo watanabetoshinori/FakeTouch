@@ -10,7 +10,7 @@ import UIKit
 
 extension UIEvent {
     
-    class func send(touches: [UITouch]) {
+    public class func send(touches: [UITouch]) {
         guard let event = UIApplication.shared._touchesEvent() else {
             return
         }
