@@ -56,6 +56,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		13AFD1A02256DF2E0077197F /* Additional */ = {
+			isa = PBXGroup;
+			children = (
+				13E77CFA220AC68100DC0D7D /* Touch.swift */,
+				1386A523220C234A00E72CE6 /* TouchEvent.swift */,
+				13E77CF8220AC68100DC0D7D /* TouchRecorder.swift */,
+				13E77CF9220AC68100DC0D7D /* TouchPlayer.swift */,
+			);
+			path = Additional;
+			sourceTree = "<group>";
+		};
 		13E77CA8220AC34000DC0D7D = {
 			isa = PBXGroup;
 			children = (
@@ -79,14 +90,11 @@
 			isa = PBXGroup;
 			children = (
 				13E77CB5220AC34000DC0D7D /* FakeTouch.h */,
-				1386A523220C234A00E72CE6 /* TouchEvent.swift */,
-				13E77CFA220AC68100DC0D7D /* Touch.swift */,
-				13E77CF8220AC68100DC0D7D /* TouchRecorder.swift */,
-				13E77CF9220AC68100DC0D7D /* TouchPlayer.swift */,
 				13E77CFE220AC6D000DC0D7D /* UITouch+FakeTouch.swift */,
 				1386A525220C327400E72CE6 /* UIEvent+FakeTouch.swift */,
 				13E77CF1220AC62E00DC0D7D /* Private Headers */,
 				13E77CEC220AC60400DC0D7D /* KIF */,
+				13AFD1A02256DF2E0077197F /* Additional */,
 				13E77D13220ACB3B00DC0D7D /* Supporting Files */,
 			);
 			path = Source;
