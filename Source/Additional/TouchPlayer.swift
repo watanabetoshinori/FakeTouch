@@ -9,7 +9,7 @@
 import UIKit
 
 public class TouchPlayer: NSObject {
-
+    
     private enum State {
         case stopped
         case playing
@@ -22,20 +22,20 @@ public class TouchPlayer: NSObject {
     }
     
     private var state: State = .stopped
-
+    
     private var events: [TouchEvent]!
     
     private var touchObjects = [String: UITouch]()
     
     private var finishPlayHandler: PlayerFinishHandler?
-
+    
     // MARK: - Initializing Player
     
     convenience public init(events: [TouchEvent]) {
         self.init()
         self.events = events
     }
-
+    
     // MARK: - Controlling
     
     public func play(finishPlayHandler: PlayerFinishHandler?) {
@@ -51,12 +51,12 @@ public class TouchPlayer: NSObject {
         
         events.forEach { event in
             group.enter()
-
+            
             DispatchQueue.main.asyncAfter(deadline: .now() + event.timeInterval) {
                 defer {
                     group.leave()
                 }
-
+                
                 if self.state != .playing {
                     return
                 }
@@ -78,7 +78,7 @@ public class TouchPlayer: NSObject {
         if isPlaying == false {
             return
         }
-
+        
         state = .stopped
         
         if let finishPlayHandler = finishPlayHandler {
@@ -91,23 +91,24 @@ public class TouchPlayer: NSObject {
     private func touchObject(for touch: Touch, windowLevel: CGFloat) -> UITouch {
         if let touchObject = touchObjects[touch.id] {
             // Reusing previous UITouch
-
+            
             touchObject.setLocation(touch.location)
+            touchObject.setPreviousLocation(touch.previousLocation)
             touchObject.setPhase(touch.phase)
             touchObject.udpateTimestamp()
-
+            
             if touch.phase == .ended {
                 touchObjects[touch.id] = nil
             }
-
+            
             return touchObject
-
+            
         } else {
             // Creating new UITouch
-
+            
             let window = UIApplication.shared.windows.first(where: { $0.windowLevel.rawValue == windowLevel }) ?? UIApplication.shared.keyWindow!
-
-            let touchObject = UITouch(with: touch.location, in: window)
+            
+            let touchObject = UITouch(with: touch.location, previousLocation: touch.previousLocation, in: window)
             touchObjects[touch.id] = touchObject
             return touchObject
         }

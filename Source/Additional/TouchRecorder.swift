@@ -51,7 +51,7 @@ public class TouchRecorder: NSObject {
         if isRecording {
             return
         }
-
+        
         self.finishRecordingHandler = finishRecordingHandler
         
         events.removeAll()
@@ -67,7 +67,7 @@ public class TouchRecorder: NSObject {
         if isRecording == false {
             return
         }
-
+        
         UIWindow.swizzlingSendEvent()
         
         state = .stopped
@@ -103,13 +103,14 @@ public class TouchRecorder: NSObject {
         guard let uiTouches = uiEvent.allTouches, uiTouches.isEmpty == false else {
             return
         }
-
+        
         let windowLevel = window.windowLevel.rawValue
         let timeInterval = Date().timeIntervalSince(startedDate)
         
         let touches = uiTouches.map { (uiTouch) -> Touch in
             return Touch(id: uiTouch.id,
                          location: uiTouch.location(in: window),
+                         previousLocation: uiTouch.previousLocation(in: window),
                          phase: uiTouch.phase)
         }
         
@@ -123,7 +124,7 @@ public class TouchRecorder: NSObject {
             self.events.append(event)
         }
     }
-
+    
 }
 
 // MARK: - UIWindow extesnion for recording Touch event
@@ -132,7 +133,7 @@ extension UIWindow {
     
     @objc func swizzledSendEvent(_ event: UIEvent) {
         TouchRecorder.shared.add(event, in: self)
-
+        
         swizzledSendEvent(event)
     }
     
