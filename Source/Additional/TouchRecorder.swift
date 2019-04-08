@@ -109,8 +109,8 @@ public class TouchRecorder: NSObject {
         
         let touches = uiTouches.map { (uiTouch) -> Touch in
             return Touch(id: uiTouch.id,
-                         location: uiTouch.location(in: window),
-                         previousLocation: uiTouch.previousLocation(in: window),
+                         location: uiTouch.location(in: uiTouch.window),
+                         previousLocation: uiTouch.previousLocation(in: uiTouch.window),
                          phase: uiTouch.phase)
         }
         
