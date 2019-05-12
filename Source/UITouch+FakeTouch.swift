@@ -16,7 +16,7 @@ extension UITouch {
     
     // MARK: - Initialize UITouch
     
-    convenience public init(with location: CGPoint, in window: UIWindow) {
+    convenience public init(with location: CGPoint, previousLocation: CGPoint, in window: UIWindow) {
         self.init()
         
         let view = window.hitTest(location, with: nil)
@@ -27,10 +27,10 @@ extension UITouch {
         setPhase(.began)
         _setIsFirstTouch(forView: true)
         setIsTap(true)
-        
+        setPreviousLocation(previousLocation)
         _setLocation(inWindow: location, resetPrevious: true)
         setTimestamp(ProcessInfo.processInfo.systemUptime)
-
+        
         if responds(to: #selector(setGestureView(_:))) {
             setGestureView(view)
         }
@@ -42,7 +42,11 @@ extension UITouch {
     // MARK: - Updating values
     
     public func setLocation(_ location: CGPoint) {
-        _setLocation(inWindow: location, resetPrevious: true)
+        _setLocation(inWindow: location, resetPrevious: false)
+    }
+    
+    public func setPreviousLocation(_ location: CGPoint) {
+        self.setValue(NSValue.init(cgPoint: location), forKey: "_previousLocationInWindow")
     }
     
     public func udpateTimestamp() {
